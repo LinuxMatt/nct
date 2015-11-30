@@ -26,7 +26,11 @@ AC_CHECK_LIB(ncurses, initscr,
 
 dnl Checks for header files.
 AC_HEADER_STDC
-AC_CHECK_HEADERS(fcntl.h sys/time.h unistd.h ncurses.h)
+AC_CHECK_HEADERS(fcntl.h sys/time.h unistd.h)
+AX_WITH_CURSES
+if test "x$ax_cv_curses" != xyes; then
+	AC_MSG_ERROR([requires header files for (n)curses library])
+fi
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
