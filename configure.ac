@@ -26,9 +26,7 @@ AC_CHECK_LIB(ncurses, initscr,
 
 dnl Checks for header files.
 AC_HEADER_STDC
-AC_CHECK_HEADERS(fcntl.h sys/time.h unistd.h)
-AC_CHECK_HEADERS([ncurses.h],[],
- [AC_MSG_ERROR([Missing header, please install ncurses development package])])
+AC_CHECK_HEADERS(fcntl.h sys/time.h unistd.h ncurses.h)
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
